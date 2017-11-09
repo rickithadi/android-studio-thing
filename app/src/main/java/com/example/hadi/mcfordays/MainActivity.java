@@ -1,5 +1,6 @@
 package com.example.hadi.mcfordays;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -28,5 +29,26 @@ public class MainActivity extends AppCompatActivity {
                 result.setText(resultz +"");
             }
         });
+Button secondActivityBtn= (Button) findViewById(R.id.button2);
+secondActivityBtn.setOnClickListener(new View.OnClickListener() {
+
+
+    @Override
+    public void onClick(View view) {
+
+        Intent startIntent =new Intent(getApplicationContext(), SecondActivity.class);
+        startIntent.putExtra("com.example.mcfordays", "hello world");
+        startActivity(startIntent);
+
     }
-}
+});
+
+
+    }
+
+
+
+
+    }
+
+
