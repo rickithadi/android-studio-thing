@@ -1,6 +1,7 @@
 package com.example.hadi.mcfordays;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -17,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
 
         Button butt= (Button) findViewById(R.id.button);
         butt.setOnClickListener(new View.OnClickListener() {
+
+            //button onclick
             @Override
             public void onClick(View view) {
                 EditText num1= (EditText) findViewById(R.id.firstNum);
@@ -29,19 +32,37 @@ public class MainActivity extends AppCompatActivity {
                 result.setText(resultz +"");
             }
         });
-Button secondActivityBtn= (Button) findViewById(R.id.button2);
-secondActivityBtn.setOnClickListener(new View.OnClickListener() {
 
 
+
+    Button secondActivityBtn= (Button) findViewById(R.id.button2);
+    secondActivityBtn.setOnClickListener(new View.OnClickListener() {
+    //button2 onclick
     @Override
     public void onClick(View view) {
 
         Intent startIntent =new Intent(getApplicationContext(), SecondActivity.class);
-        startIntent.putExtra("com.example.mcfordays", "hello world");
+        startIntent.putExtra("com.example.mcfordays", " world");
         startActivity(startIntent);
 
     }
 });
+
+        Button googleButton= (Button) findViewById(R.id.button3);
+        googleButton.setOnClickListener(new View.OnClickListener() {
+            //google button onclick
+            @Override
+            public void onClick(View view) {
+                String google="http://google.com.sg";
+                Uri webaddress = Uri.parse(google);
+
+                Intent gotoGogle=new Intent(Intent.ACTION_VIEW, webaddress);
+                if (gotoGogle.resolveActivity(getPackageManager()) != null){
+                    startActivity(gotoGogle);
+                }
+
+            }
+        });
 
 
     }
