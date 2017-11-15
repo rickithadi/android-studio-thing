@@ -1,11 +1,13 @@
 package com.example.hadi.mcfordays;
 
 import android.app.Activity;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -17,14 +19,16 @@ public class BookAdapter extends BaseAdapter {
     Activity activity;
     List<Book> stBooks;
     LayoutInflater inflater;
-    EditText editId, editTitle;
+    EditText editId, editName,editAuthor;
 
-    public BookAdapter(Activity activity, List<Book> stBooks, LayoutInflater inflater, EditText editId, EditText editTitle) {
+    public BookAdapter(Activity activity, List<Book> stBooks ,EditText editId, EditText editName, EditText editAuthor) {
         this.activity = activity;
         this.stBooks = stBooks;
-        this.inflater = inflater;
+       inflater=(LayoutInflater)activity.getSystemService( Context.LAYOUT_INFLATER_SERVICE );
+
         this.editId = editId;
-        this.editTitle = editTitle;
+        this.editName = editName;
+        this.editAuthor=editAuthor;
     }
 
     @Override
@@ -44,6 +48,21 @@ public class BookAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        return null;
+        View rowView;
+        rowView=inflater.inflate(R.layout.row,null);
+        final TextView txtRowId,txtRowName,txtRowAuthor;
+        txtRowId=(TextView)rowView.findViewById( R. id.txtRowId);
+        txtRowName=(TextView)rowView.findViewById( R. id.txtRowName);
+        txtRowAuthor=(TextView)rowView.findViewById( R. id.txtRowAuthor);
+
+        rowView.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editId.setText( ""+txtRowId.getText() );
+                editName.setText( ""+txtRowName.getText() );
+                editAuthor.setText( ""+txtRowAuthor.getText() );
+            }
+        } );
+        return rowView;
     }
 }

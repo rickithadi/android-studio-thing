@@ -24,7 +24,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
     //table
     private static final String TABLE_NAME = "Books";
     private static final String KEY_ID = "Id";
-    private static final String KEY_NAME= "Title";
+    private static final String KEY_NAME= "Name";
     private static final String KEY_AUTHOR = "Author";
 
 
@@ -36,7 +36,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String CREATE_TABLE=    "CREATE TABLE "+ TABLE_NAME+")"
+        String CREATE_TABLE=    "CREATE TABLE "+ TABLE_NAME+"("
                         +KEY_ID+" INTEGER PRIMARY KEY,"+KEY_NAME+" TEXT,"
                        +KEY_AUTHOR+" TEXT"+")";
 
@@ -57,7 +57,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
     public void addBooks(Book book){
         SQLiteDatabase db=this.getWritableDatabase();
     ContentValues values=new ContentValues(  );
-    values.put( KEY_NAME,book.getTitle() );
+    values.put( KEY_NAME,book.getName() );
     values.put( KEY_AUTHOR,book.getAuthor() );
 
     db.insert(TABLE_NAME, null, values);
@@ -67,7 +67,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
     public int updateBooks(Book book){
         SQLiteDatabase db=this.getWritableDatabase();
         ContentValues values=new ContentValues(  );
-        values.put( KEY_NAME,book.getTitle() );
+        values.put( KEY_NAME,book.getName() );
         values.put( KEY_AUTHOR,book.getAuthor() );
 
         return db.update(TABLE_NAME, values, KEY_ID+" =?", new String[]{String.valueOf(book.getId())});
@@ -104,7 +104,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
             do {
                 Book book = new Book();
                 book.setId( cursor.getInt( 0 ) );
-                book.setTitle( cursor.getString( 1 ) );
+                book.setName( cursor.getString( 1 ) );
                 book.setAuthor( cursor.getString( 2 ) );
 
                 stBooks.add( book );
