@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,17 +37,11 @@ public class MainActivity extends AppCompatActivity {
 
 
         btnAdd= (Button) findViewById(R.id.btnAdd);
-
         btnUpdate = (Button) findViewById(R.id.btnUpdate);
-
         btnDelete = (Button) findViewById(R.id.btnDelete);
-
         stBooks=(ListView)findViewById( R.id.list );
-
         editId=(EditText) findViewById(R.id.editId);
-
         editName=(EditText) findViewById(R.id.editName);
-
         editAuthor=(EditText) findViewById(R.id.editAuthor);
 
 
@@ -59,7 +54,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Book book= new Book(Integer.parseInt( editId.getText().toString() ),editName.getText().toString(),editAuthor.getText().toString());
                 db.addBooks( book );
+                Log.d("added1","added view :"+ book);
                 refreshData();
+               // Log.d("added1","added view"+ book);
             }
         } );
 
@@ -68,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Book book= new Book(Integer.parseInt( editId.getText().toString() ),editName.getText().toString(),editAuthor.getText().toString());
                 db.updateBooks( book );
+                Log.d("updated1","updated  :"+ book);
                 refreshData();
             }
         } );
@@ -77,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Book book= new Book(Integer.parseInt( editId.getText().toString() ),editName.getText().toString(),editAuthor.getText().toString());
                 db.deleteBooks( book );
+                Log.d("deleted1","deleted  :"+ book);
                 refreshData();
             }
         } );

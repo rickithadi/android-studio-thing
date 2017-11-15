@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,6 +56,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
     //CRUD BOOKS
 
     public void addBooks(Book book){
+        Log.d("added2","added view :"+ book);
         SQLiteDatabase db=this.getWritableDatabase();
     ContentValues values=new ContentValues(  );
     values.put( KEY_NAME,book.getName() );
@@ -66,6 +68,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 
     public int updateBooks(Book book){
         SQLiteDatabase db=this.getWritableDatabase();
+        Log.d("updated2","updated  :"+ book);
         ContentValues values=new ContentValues(  );
         values.put( KEY_NAME,book.getName() );
         values.put( KEY_AUTHOR,book.getAuthor() );
@@ -76,7 +79,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 
     public void deleteBooks(Book book){
         SQLiteDatabase db=this.getWritableDatabase();
-
+        Log.d("deleted2","deleted  :"+ book);
 
         db.delete(TABLE_NAME, KEY_ID+ " =?", new String[]{String.valueOf( book.getId())} );
         db.close();

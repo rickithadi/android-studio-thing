@@ -2,6 +2,7 @@ package com.example.hadi.mcfordays;
 
 import android.app.Activity;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,6 +44,7 @@ public class BookAdapter extends BaseAdapter {
 
     @Override
     public long getItemId(int i) {
+        Log.d("Id_BookAdapter ","Id_BookAdapter"+ stBooks.get(i).getId());
         return stBooks.get(i).getId();
     }
 
@@ -54,6 +56,10 @@ public class BookAdapter extends BaseAdapter {
         txtRowId=(TextView)rowView.findViewById( R. id.txtRowId);
         txtRowName=(TextView)rowView.findViewById( R. id.txtRowName);
         txtRowAuthor=(TextView)rowView.findViewById( R. id.txtRowAuthor);
+
+        txtRowId.setText( ""+stBooks.get( i ).getId() );
+        txtRowName.setText( ""+stBooks.get( i ).getName() );
+        txtRowAuthor.setText( ""+stBooks.get( i ).getAuthor() );
 
         rowView.setOnClickListener( new View.OnClickListener() {
             @Override
