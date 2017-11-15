@@ -17,7 +17,19 @@
             </intent-filter>
         </activity>
         <activity android:name=".SecondActivity" />
-        <activity android:name=".detailActivity"></activity>
+        <activity android:name=".detailActivity" />
+        <activity
+            android:name=".UserActivity"
+            android:label="@string/title_activity_user" />
+        <activity
+            android:name=".PlayActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_play"
+            android:theme="@style/FullscreenTheme" />
+        <activity
+            android:name=".StatsActivity"
+            android:label="@string/title_activity_stats"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

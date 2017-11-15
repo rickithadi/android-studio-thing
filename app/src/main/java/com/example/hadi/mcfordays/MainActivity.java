@@ -16,37 +16,48 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button butt= (Button) findViewById(R.id.button);
+
+
+        Button butt= (Button) findViewById(R.id.playButton);
         butt.setOnClickListener(new View.OnClickListener() {
 
             //button onclick
             @Override
             public void onClick(View view) {
-                EditText num1= (EditText) findViewById(R.id.firstNum);
-                EditText num2= (EditText) findViewById(R.id.secondNum);
-                TextView result=(TextView) findViewById(R.id.result);
+                Intent startIntent =new Intent(getApplicationContext(), PlayActivity.class);
+                startIntent.putExtra("com.example.mcfordays", " world");
+                startActivity(startIntent);
 
-                int number1 = Integer.parseInt(num1.getText().toString());
-                int number2 = Integer.parseInt(num2.getText().toString());
-                int resultz= number1+number2;
-                result.setText(resultz +"");
             }
         });
 
 
 
-    Button secondActivityBtn= (Button) findViewById(R.id.button2);
-    secondActivityBtn.setOnClickListener(new View.OnClickListener() {
+       Button users= (Button) findViewById(R.id.usersButton);
+    users.setOnClickListener(new View.OnClickListener() {
     //button2 onclick
     @Override
     public void onClick(View view) {
 
-        Intent startIntent =new Intent(getApplicationContext(), SecondActivity.class);
+        Intent startIntent =new Intent(getApplicationContext(), UserActivity.class);
         startIntent.putExtra("com.example.mcfordays", " world");
         startActivity(startIntent);
 
     }
 });
+
+        Button stats= (Button) findViewById(R.id.statsButton);
+        stats.setOnClickListener(new View.OnClickListener() {
+            //button2 onclick
+            @Override
+            public void onClick(View view) {
+
+                Intent startIntent =new Intent(getApplicationContext(), StatsActivity.class);
+                startIntent.putExtra("com.example.mcfordays", " world");
+                startActivity(startIntent);
+
+            }
+        });
 
         Button googleButton= (Button) findViewById(R.id.button3);
         googleButton.setOnClickListener(new View.OnClickListener() {
