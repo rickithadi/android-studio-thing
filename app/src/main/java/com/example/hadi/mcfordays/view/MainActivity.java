@@ -1,7 +1,5 @@
-package com.example.hadi.mcfordays;
+package com.example.hadi.mcfordays.view;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,7 +7,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
+
+import com.example.hadi.mcfordays.data.Book;
+import com.example.hadi.mcfordays.data.DataBaseHelper;
+import com.example.hadi.mcfordays.R;
+import com.example.hadi.mcfordays.controller.BookAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView( R.layout.activity_main);
 
         db =new DataBaseHelper(this);
 

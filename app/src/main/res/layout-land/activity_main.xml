@@ -9,49 +9,45 @@
     <EditText
         android:id="@+id/editId"
         android:layout_width="110dp"
-        android:layout_height="46dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:hint="enter ID"
         android:inputType="number"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.132"
+        app:layout_constraintHorizontal_bias="0.382"
         app:layout_constraintStart_toEndOf="@+id/btnAdd"
         app:layout_constraintTop_toBottomOf="@+id/editName"
-        app:layout_constraintVertical_bias="0.11" />
-
-    <EditText
-        android:id="@+id/editAuthor"
-        android:layout_width="110dp"
-        android:layout_height="wrap_content"
-
-        android:layout_marginEnd="32dp"
-        android:layout_marginStart="36dp"
-        android:hint="enter author"
-        android:inputType="text"
-        android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.133"
-        app:layout_constraintStart_toEndOf="@+id/btnDelete"
-        app:layout_constraintTop_toBottomOf="@+id/list" />
+        app:layout_constraintVertical_bias="0.178" />
 
     <EditText
         android:id="@+id/editName"
         android:layout_width="115dp"
         android:layout_height="wrap_content"
-
         android:layout_marginEnd="32dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="64dp"
         android:hint="enter Name"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.131"
+        app:layout_constraintHorizontal_bias="0.373"
         app:layout_constraintStart_toEndOf="@+id/btnUpdate"
         app:layout_constraintTop_toBottomOf="@+id/editAuthor" />
+
+    <EditText
+        android:id="@+id/editAuthor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="408dp"
+        android:layout_marginTop="204dp"
+        android:hint="enter author"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnAdd"
@@ -59,53 +55,47 @@
         android:layout_width="128dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="396dp"
         android:layout_marginTop="8dp"
         android:text="add"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/editId"
-        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnUpdate"
-        app:layout_constraintVertical_bias="0.105" />
+        app:layout_constraintVertical_bias="0.17" />
 
     <Button
         android:id="@+id/btnUpdate"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="129dp"
         android:layout_height="wrap_content"
-
-
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginStart="396dp"
+        android:layout_marginTop="48dp"
         android:text="update"
-        app:layout_constraintEnd_toStartOf="@+id/editName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnDelete" />
 
     <Button
         android:id="@+id/btnDelete"
-        style="@style/Widget.AppCompat.Button.Colored"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="131dp"
         android:layout_height="wrap_content"
-
-        android:layout_marginStart="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="220dp"
         android:text="delete"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toStartOf="@+id/editAuthor"
+        app:layout_constraintHorizontal_bias="0.616"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/list" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
         android:id="@+id/list"
         style="@android:style/Widget.DeviceDefault.ExpandableListView"
-        android:layout_width="1043dp"
+        android:layout_width="1284dp"
         android:layout_height="184dp"
-        android:layout_marginTop="16dp"
         android:choiceMode="singleChoice"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintHorizontal_bias="0.468"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"></ListView>
 

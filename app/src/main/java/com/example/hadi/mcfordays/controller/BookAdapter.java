@@ -1,4 +1,4 @@
-package com.example.hadi.mcfordays;
+package com.example.hadi.mcfordays.controller;
 
 import android.app.Activity;
 import android.content.Context;
@@ -9,6 +9,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.example.hadi.mcfordays.data.Book;
+import com.example.hadi.mcfordays.R;
 
 import java.util.List;
 
@@ -51,7 +54,7 @@ public class BookAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         View rowView;
-        rowView=inflater.inflate(R.layout.row,null);
+        rowView=inflater.inflate( R.layout.row,null);
         final TextView txtRowId,txtRowName,txtRowAuthor;
         txtRowId=(TextView)rowView.findViewById( R. id.txtRowId);
         txtRowName=(TextView)rowView.findViewById( R. id.txtRowName);
