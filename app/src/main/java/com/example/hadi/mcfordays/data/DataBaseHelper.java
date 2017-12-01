@@ -21,7 +21,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
     //DB
     private static final int DATABASE_VER = 1;
     // Database Name
-    private static final String DATABASE_NAME = "BookDB";
+    private static final String DATABASE_NAME = "BookDeeB";
 
     //table
     private static final String TABLE_NAME = "Books";
@@ -104,6 +104,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         String selectQuery = "SELECT * FROM " + TABLE_NAME;
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery( selectQuery, null );
+
         if (cursor.moveToFirst()) {
             do {
                 Book book = new Book();
@@ -112,6 +113,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
                 book.setAuthor( cursor.getString( 2 ) );
 
                 stBooks.add( book );
+             //   cursor.close();
 
             }
             while (cursor.moveToNext());
